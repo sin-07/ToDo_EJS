@@ -13,10 +13,15 @@ app.use(function (req, res, next) {
     console.log("I am second middleware");
     next();
 });
+app.use(function (req, res, next) {
+    console.log("I am third middleware");
+    next();
+});
 
 app.get("/", function (req, res) {
   res.send("Champ");
 });
+
 app.get("/pro", function (req, res) {
   res.send("Yes I am Pro Champion");
 });
